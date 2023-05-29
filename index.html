@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cambio de Moneda</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cambio de Moneda</h1>
+    </header>
+    <main>
+        <div class="container-form">
+            <form action="text">
+                <h2>Realizar cambio de moneda</h2>
+                <fieldset>
+                    <div>
+                        <label for="number"> <b>Cantidad de pesos argentinos:</b></label><br>
+                        <input type="number" name="pesos" id="pesos" value="1">
+                    </div>
+                    <div>
+                        <legend><b>Moneda extranjera:</b></legend>
+                        <select name="tipoDeMonedaExt" id="tipoDeMonedaExt">
+                            <!-- validaciones:por defecto ya selecciona una opcion -->
+                            <option value="238.24" selected>Dolar</option>
+                            <option value="255.12">Euro</option>
+                            <option value="47.57">Reales</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" value="Calcular" class="button" onclick="calcularCambio(event);" />
+                    <div class="resultado">
+                        <p><b id="textResultado"></b></p>
+                        <p id="resultado"></p>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+        <div class="container-agregar">
+            <h2>Agregar una nueva moneda</h2>
+            <form action="text">
+                <fieldset>
+                    <label for="name"><b>Nombre de la moneda:</b></label>
+                    <input type="text" name="name" id="nameMoneda">
+                    <br>
+
+                    <label for="conversion"> <b>Su conversion a pesos:</b></label><br>
+                    <input type="number" name="conversion" id="conversion" value="100">
+                    <br><br>
+                    <input type="submit" value="Calcular" class="button" onclick="agregarMoneda(event);" />
+                    <div class="respuesta">
+                        <p id="respuesta"></p>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+
+</html>
